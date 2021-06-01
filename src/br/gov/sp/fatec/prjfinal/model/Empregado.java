@@ -1,4 +1,4 @@
-package br.gov.sp.fatec.prjfinal;
+package br.gov.sp.fatec.prjfinal.model;
 
 public class Empregado {
 

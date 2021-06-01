@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.prjfinal;
 
+import br.gov.sp.fatec.prjfinal.view.EmpregadoGUI;
+
 import javax.swing.*;
 
 public class GerenciarPrograma {

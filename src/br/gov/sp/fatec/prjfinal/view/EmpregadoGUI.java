@@ -1,4 +1,8 @@
-package br.gov.sp.fatec.prjfinal;
+package br.gov.sp.fatec.prjfinal.view;
+
+import br.gov.sp.fatec.prjfinal.GerenciarEmpregado;
+import br.gov.sp.fatec.prjfinal.ParametroINSS;
+import br.gov.sp.fatec.prjfinal.model.Empregado;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
