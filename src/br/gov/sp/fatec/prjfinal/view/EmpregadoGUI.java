@@ -1,7 +1,7 @@
 package br.gov.sp.fatec.prjfinal.view;
 
-import br.gov.sp.fatec.prjfinal.GerenciarEmpregado;
-import br.gov.sp.fatec.prjfinal.ParametroINSS;
+import br.gov.sp.fatec.prjfinal.model.GerenciarEmpregado;
+import br.gov.sp.fatec.prjfinal.model.ParametroINSS;
 import br.gov.sp.fatec.prjfinal.model.Empregado;
 
 import javax.swing.*;
@@ -74,20 +74,11 @@ public class EmpregadoGUI {
         buttonApresentar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                for (Empregado empregado: gerenciarEmpregado.listaDeEmpregados()) {
-                    System.out.println("Lista de empregados");
-                    System.out.println("Codigo: " + empregado.getCodigoEmpregado());
-                    System.out.println("Nome: " + empregado.getNomeEmpregado());
-                    System.out.println("Setor: " + empregado.getSetor());
-                    System.out.println("Salário bruto: R$" + String.format("%.2f", empregado.getSalarioBruto()));
-                    System.out.println("Recolhimento INSS: R$" + String.format("%.2f", empregado.getRecINSS()));
-                    System.out.println("--------------------------");
-                }
                 JFrame empregadoFrame = new JFrame();
                 empregadoFrame.setContentPane(new GerenciarEmpregadosGUI(gerenciarEmpregado.listaDeEmpregados()).getPanel());
                 empregadoFrame.setSize(500, 500);
                 empregadoFrame.setLocationRelativeTo(null);
-                empregadoFrame.setTitle("Cadastro de Empregados");
+                empregadoFrame.setTitle("Gerenciar Empregados");
                 empregadoFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 empregadoFrame.setVisible(true);
             }

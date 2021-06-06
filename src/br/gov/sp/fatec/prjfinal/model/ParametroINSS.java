@@ -1,4 +1,4 @@
-package br.gov.sp.fatec.prjfinal;
+package br.gov.sp.fatec.prjfinal.model;
 
 public class ParametroINSS {
     public static final double FAIXA1 = 0.075;
@@ -15,8 +15,8 @@ public class ParametroINSS {
     public static double calcularINSS(double salarioBruto) {
         int i = 0;
         double valorINSS = 0.0d;
-        if (salarioBruto < LIMITEFAIXA1) {
-            return 0d;
+        if (salarioBruto <= LIMITEFAIXA1) {
+            return 82.50d;
         }
         while (i < limites.length && salarioBruto >= limites[i]) {
             double atual;
@@ -25,7 +25,6 @@ public class ParametroINSS {
             } else {
                 atual = (limites[i] - limites[i - 1]) * faixas[i];
             }
-            System.out.println(atual);
             valorINSS += atual;
             i++;
         }
@@ -33,7 +32,6 @@ public class ParametroINSS {
         if (salarioBruto <= LIMITEFAIXA4) {
             atual = (salarioBruto - limites[i - 1]) * faixas[i < faixas.length ? i : faixas.length - 1];
         }
-        System.out.println("Restante: " + atual);
         valorINSS += atual;
         return valorINSS;
     }

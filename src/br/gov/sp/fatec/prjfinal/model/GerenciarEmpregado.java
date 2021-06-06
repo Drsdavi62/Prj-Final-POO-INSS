@@ -1,6 +1,4 @@
-package br.gov.sp.fatec.prjfinal;
-
-import br.gov.sp.fatec.prjfinal.model.Empregado;
+package br.gov.sp.fatec.prjfinal.model;
 
 import java.util.ArrayList;
 import java.util.List;
