@@ -20,11 +20,13 @@ public class GerenciarEmpregadosGUI {
         modelo.addColumn("Recolhimento");
 
         for (Empregado empregado : empregados) {
-            modelo.addRow(new Object[]{empregado.getCodigoEmpregado(),
+            modelo.addRow(new Object[]{
+                    empregado.getCodigoEmpregado(),
                     empregado.getNomeEmpregado(),
                     empregado.getSetor(),
-                    "R$" + empregado.getSalarioBruto(),
-                    "R$" + String.format("%.2f", empregado.getRecINSS())});
+                    "R$" + String.format("%.2f", empregado.getSalarioBruto()),
+                    "R$" + String.format("%.2f", empregado.getRecINSS())
+            });
         }
 
         jTableEmpregados.setModel(modelo);
