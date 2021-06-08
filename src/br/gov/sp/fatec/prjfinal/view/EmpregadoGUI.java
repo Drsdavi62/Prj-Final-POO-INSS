@@ -35,7 +35,7 @@ public class EmpregadoGUI {
 
         buttonCadastrar.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mouseReleased(MouseEvent e) {
                 if (valorCalculado == -1) {
                     JOptionPane.showMessageDialog(panelEmpregado, "Calcule o valor do INSS antes de cadastrar");
                     return;
@@ -62,18 +62,22 @@ public class EmpregadoGUI {
         });
         buttonCalcular.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mouseReleased(MouseEvent e) {
                 if (textSalario.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(panelEmpregado, "Insira um salário bruto");
                     return;
                 }
-                valorCalculado = ParametroINSS.calcularINSS(Double.parseDouble(textSalario.getText()));
-                labelValorCalculado.setText("R$" + String.format("%.2f", valorCalculado));
+                try {
+                    valorCalculado = ParametroINSS.calcularINSS(Double.parseDouble(textSalario.getText()));
+                    labelValorCalculado.setText("R$" + String.format("%.2f", valorCalculado));
+                } catch (Exception exception) {
+                    JOptionPane.showMessageDialog(panelEmpregado, "Apenas números são válidos!");
+                }
             }
         });
         buttonApresentar.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mouseReleased(MouseEvent e) {
                 JFrame empregadoFrame = new JFrame();
                 empregadoFrame.setContentPane(new GerenciarEmpregadosGUI(gerenciarEmpregado.listaDeEmpregados()).getPanel());
                 empregadoFrame.setSize(500, 500);
